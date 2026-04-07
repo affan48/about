@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Sophia Chen",
+    "role": "Developer",
+    "image": "https://i.pravatar.cc/400?img=47",
+    "bio": "Full-stack engineer with 7 years of experience in React, Node.js and distributed systems. Obsessed with clean code and high-performance applications.",
+    "linkedin": "https://linkedin.com",
+    "github": "https://github.com"
+  },
+  {
+    "id": 2,
+    "name": "Marcus Webb",
+    "role": "Designer",
+    "image": "https://i.pravatar.cc/400?img=68",
+    "bio": "Product designer focused on crafting pixel-perfect interfaces that prioritize user delight. Former lead designer at two fintech unicorns.",
+    "linkedin": "https://linkedin.com",
+    "github": "https://github.com"
+  },
+  {
+    "id": 3,
+    "name": "Aisha Rahman",
+    "role": "Manager",
+    "image": "https://i.pravatar.cc/400?img=44",
+    "bio": "Project manager and agile coach who keeps teams aligned, clients happy, and deadlines met — without burning anyone out.",
+    "linkedin": "https://linkedin.com",
+    "github": ""
+  },
+  {
+    "id": 4,
+    "name": "Luca Ferrara",
+    "role": "DevOps",
+    "image": "https://i.pravatar.cc/400?img=52",
+    "bio": "Infrastructure wizard specializing in Kubernetes, Terraform, and CI/CD pipelines. Makes 99.99% uptime look effortless.",
+    "linkedin": "https://linkedin.com",
+    "github": "https://github.com"
+  },
+  {
+    "id": 5,
+    "name": "Zara Malik",
+    "role": "Designer",
+    "image": "https://i.pravatar.cc/400?img=45",
+    "bio": "Brand strategist and visual designer who transforms complex ideas into compelling visual systems. Thinks in systems, designs in details.",
+    "linkedin": "https://linkedin.com",
+    "github": ""
+  },
+  {
+    "id": 6,
+    "name": "James Okafor",
+    "role": "Developer",
+    "image": "https://i.pravatar.cc/400?img=59",
+    "bio": "Backend specialist with a passion for scalable APIs and data engineering. Contributor to several open-source projects with 2k+ GitHub stars.",
+    "linkedin": "https://linkedin.com",
+    "github": "https://github.com"
+  },
+  {
+    "id": 7,
+    "name": "Priya Nair",
+    "role": "Marketing",
+    "image": "https://i.pravatar.cc/400?img=48",
+    "bio": "Growth marketer with expertise in content strategy, SEO, and demand generation. Helped scale two SaaS startups from 0 to 50k users.",
+    "linkedin": "https://linkedin.com",
+    "github": ""
+  },
+  {
+    "id": 8,
+    "name": "Ethan Brooks",
+    "role": "Manager",
+    "image": "https://i.pravatar.cc/400?img=65",
+    "bio": "Technical program manager bridging business strategy and engineering execution. Certified Scrum Master with a background in software architecture.",
+    "linkedin": "https://linkedin.com",
+    "github": "https://github.com"
+  }
+]

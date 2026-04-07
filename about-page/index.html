@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>NexaStudio — About Us</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ══════ NAVBAR ══════ -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="#" class="logo">Nexa<span>Studio</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#team">Team</a>
+      <a href="#" id="adminToggleBtn" class="admin-btn">Admin Panel</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="sun">☀️</span><span class="moon">🌙</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════ HERO ══════ -->
+<section class="hero" id="about">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-tag animate-in">Est. 2019</div>
+    <h1 class="hero-title animate-in delay-1">We Build<br/><em>Digital</em> Futures</h1>
+    <p class="hero-sub animate-in delay-2">A full-service digital studio crafting immersive web experiences, scalable systems, and brands that make people feel something.</p>
+    <div class="hero-stats animate-in delay-3">
+      <div class="stat"><span class="stat-num" data-target="120">0</span><span>+</span><small>Projects</small></div>
+      <div class="stat"><span class="stat-num" data-target="40">0</span><span>+</span><small>Clients</small></div>
+      <div class="stat"><span class="stat-num" data-target="5">0</span><span>yrs</span><small>Experience</small></div>
+    </div>
+  </div>
+  <div class="scroll-hint">scroll ↓</div>
+</section>
+
+<!-- ══════ ABOUT SECTION ══════ -->
+<section class="about-section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text animate-on-scroll">
+        <span class="eyebrow">Who We Are</span>
+        <h2>Mission & Vision</h2>
+        <p><strong>Mission:</strong> To empower businesses with cutting-edge technology solutions — from sleek user interfaces to robust backend systems — built with precision, care, and creativity.</p>
+        <p><strong>Vision:</strong> A world where every great idea has a digital form worth experiencing. We see technology not as a tool, but as a medium for human connection.</p>
+      </div>
+      <div class="services-grid animate-on-scroll delay-1">
+        <div class="service-card"><div class="service-icon">⚡</div><h4>Web Development</h4><p>Full-stack apps built to scale, with performance at the core.</p></div>
+        <div class="service-card"><div class="service-icon">🎨</div><h4>UI/UX Design</h4><p>Interfaces that feel inevitable — beautifully intuitive.</p></div>
+        <div class="service-card"><div class="service-icon">📱</div><h4>Mobile Apps</h4><p>Native & cross-platform solutions for iOS and Android.</p></div>
+        <div class="service-card"><div class="service-icon">☁️</div><h4>Cloud & DevOps</h4><p>Infrastructure that breathes — elastic, resilient, secure.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ TEAM SECTION ══════ -->
+<section class="team-section" id="team">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <span class="eyebrow">The People</span>
+      <h2>Meet the Team</h2>
+      <p>Talented humans who care deeply about their craft.</p>
+    </div>
+
+    <!-- Search & Filter -->
+    <div class="team-controls animate-on-scroll">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="searchInput" placeholder="Search members…"/>
+      </div>
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-btn active" data-role="All">All</button>
+        <button class="filter-btn" data-role="Developer">Developer</button>
+        <button class="filter-btn" data-role="Designer">Designer</button>
+        <button class="filter-btn" data-role="Manager">Manager</button>
+        <button class="filter-btn" data-role="DevOps">DevOps</button>
+        <button class="filter-btn" data-role="Marketing">Marketing</button>
+      </div>
+    </div>
+
+    <!-- Team Cards -->
+    <div class="team-grid" id="teamGrid">
+      <!-- Populated by JS -->
+    </div>
+    <p class="no-results" id="noResults" style="display:none">No team members match your search.</p>
+  </div>
+</section>
+
+<!-- ══════ MODAL ══════ -->
+<div class="modal-overlay" id="memberModal">
+  <div class="modal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+</div>
+
+<!-- ══════ ADMIN PANEL ══════ -->
+<div class="admin-overlay" id="adminOverlay">
+  <div class="admin-panel">
+    <div class="admin-header">
+      <h3>⚙️ Admin Panel</h3>
+      <button id="adminClose">✕</button>
+    </div>
+
+    <!-- Add / Edit Form -->
+    <div class="admin-form-section">
+      <h4 id="formTitle">➕ Add Team Member</h4>
+      <form id="memberForm">
+        <input type="hidden" id="editId"/>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" id="fName" placeholder="Jane Doe" required/>
+          </div>
+          <div class="form-group">
+            <label>Role *</label>
+            <select id="fRole" required>
+              <option value="">Select role…</option>
+              <option>Developer</option>
+              <option>Designer</option>
+              <option>Manager</option>
+              <option>DevOps</option>
+              <option>Marketing</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Profile Image URL</label>
+          <input type="url" id="fImage" placeholder="https://…"/>
+        </div>
+        <div class="form-group">
+          <label>Short Bio *</label>
+          <textarea id="fBio" rows="3" placeholder="A brief description…" required></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>LinkedIn URL</label>
+            <input type="url" id="fLinkedin" placeholder="https://linkedin.com/in/…"/>
+          </div>
+          <div class="form-group">
+            <label>GitHub URL</label>
+            <input type="url" id="fGithub" placeholder="https://github.com/…"/>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn-primary" id="formSubmit">Add Member</button>
+          <button type="button" class="btn-secondary" id="cancelEdit" style="display:none">Cancel Edit</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Member List -->
+    <div class="admin-list-section">
+      <h4>👥 Current Members (<span id="memberCount">0</span>)</h4>
+      <div id="adminMemberList"></div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2025 NexaStudio. Crafted with ❤️ and lots of ☕</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
